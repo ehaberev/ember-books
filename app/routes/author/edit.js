@@ -1,7 +1,7 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
 
-export default class AuthorDetailRoute extends Route {
+export default class AuthorEditRoute extends Route {
   @service dataService;
 
   async model({ id }) {

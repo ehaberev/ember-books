@@ -6,4 +6,35 @@ export default class DataServiceService extends Service {
     const response = await fetch(`${config.backendURL}authors`);
     return response.json();
   }
+
+  async readAuthor(id) {
+    const response = await fetch(`${config.backendURL}authors/${id}`);
+    return response.json();
+  }
+
+  changeAuthor(author) {
+    return fetch(`${config.backendURL}authors/${author.id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(author),
+    });
+  }
+
+  createAuthor(author) {
+    return fetch(`${config.backendURL}authors`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(author),
+    });
+  }
+
+  deleteAuthor(id) {
+    return fetch(`${config.backendURL}authors/${id}`, {
+      method: 'DELETE',
+    });
+  }
 }

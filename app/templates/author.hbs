@@ -8,18 +8,4 @@
   </a>
 </div>
 
-<div class="panel-content">
-  <h3 class="panel-title">Authors</h3>
-
-  <ul class="collection">
-  {{#each this.model as |author|}}
-    <li>
-      <LinkTo @route="author.detail">
-        <strong>{{author.lastName}}</strong>, {{author.firstName}}
-      </LinkTo>
-    </li>
-  {{/each}}
-  </ul>
-</div>
-
 {{outlet}}
