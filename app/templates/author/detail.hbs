@@ -13,7 +13,7 @@
         <div class="actions">
           <LinkTo @route="author.edit" class="btn-pop" @model="{{this.model.id}}">edit</LinkTo>
 
-          <button class="btn-recessed" type="button">delete</button>
+          <button class="btn-recessed" type="button" {{on "click" this.deleteAuthor}}>delete</button>
         </div>
       </div>
     </div>

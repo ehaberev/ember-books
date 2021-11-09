@@ -2,8 +2,8 @@
   "authors": [
     {
       "id": 1,
-      "firstName": "C.S.77",
-      "lastName": "Lewis77"
+      "firstName": "C.S.",
+      "lastName": "Lewis"
     },
     {
       "id": 2,
@@ -16,9 +16,9 @@
       "lastName": "Pushkin"
     },
     {
-      "id": 4,
       "firstName": "Bob",
-      "lastName": "Martin"
+      "lastName": "Martin",
+      "id": 4
     }
   ]
 }

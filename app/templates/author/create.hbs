@@ -7,7 +7,7 @@
 
     <div class="slide-out-heading">
       <div class="title">
-        <h3>{{this.model.lastName}} {{this.model.firstName}} - Edit Author</h3>
+        <h3>Create Author</h3>
       </div>
     </div>
 
@@ -15,7 +15,7 @@
       <form {{on "submit" this.saveAuthor}}>
         <div class="field">
           <label>First Name:</label>
-          <input type="text" placeholder="First Name" value="{{this.model.firstName}}" oninput={{action "changeFirstName" value="target.value"}} />
+          <Input @type="text" placeholder="First Name" @value={{this.model.firstName}} />
         </div>
 
         <div class="field">

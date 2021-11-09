@@ -2,8 +2,14 @@ import Service from '@ember/service';
 import config from 'ember-books/config/environment';
 
 export default class DataServiceService extends Service {
-  async readAuthors() {
-    const response = await fetch(`${config.backendURL}authors`);
+  async readAuthors(searchValue) {
+    let url = `${config.backendURL}authors`;
+
+    if (searchValue) {
+      url += `?q=${searchValue}`;
+    }
+
+    const response = await fetch(url);
     return response.json();
   }
 

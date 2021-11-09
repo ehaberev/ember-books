@@ -3,9 +3,29 @@
     <Input @type="text" placeholder="Search by Author Name" @value={{this.search}} />
   </div>
 
-  <a href class="btn-new">
+  <LinkTo @route="author.create" class="btn-new">
     <div class="sr-only">Add new Author</div>
-  </a>
+  </LinkTo>
+</div>
+
+<div class="panel-content">
+  <h3 class="panel-title">Authors</h3>
+
+  {{#if this.isLoading}}
+    <div class="welcome-page">
+      <img src="/loading.gif" />
+    </div>
+  {{else}}
+    <ul class="collection">
+      {{#each this.model as |author|}}
+        <li>
+          <LinkTo @route="author.detail" @model="{{author.id}}">
+            <strong>{{author.lastName}}</strong>, {{author.firstName}}
+          </LinkTo>
+        </li>
+      {{/each}}
+    </ul>
+  {{/if}}
 </div>
 
 {{outlet}}
