@@ -7,9 +7,8 @@ export default class AuthorEditController extends Controller {
   @service router;
 
   @action
-  async saveAuthor(e) {
-    e.preventDefault();
-    await this.dataService.changeAuthor(this.model);
+  async editAuthor(author) {
+    await this.dataService.changeAuthor(author);
 
     // this.transitionToRoute('author');
     this.router.transitionTo('author');
@@ -18,5 +17,10 @@ export default class AuthorEditController extends Controller {
   @action
   changeFirstName(firstName) {
     this.model.firstName = firstName;
+  }
+
+  initData() {
+    this.firstName = this.model.firstName;
+    this.lastName = this.model.lastName;
   }
 }

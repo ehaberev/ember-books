@@ -18,11 +18,7 @@
   {{else}}
     <ul class="collection">
       {{#each this.model as |author|}}
-        <li>
-          <LinkTo @route="author.detail" @model="{{author.id}}">
-            <strong>{{author.lastName}}</strong>, {{author.firstName}}
-          </LinkTo>
-        </li>
+        <AuthorItem @author={{author}} />
       {{/each}}
     </ul>
   {{/if}}

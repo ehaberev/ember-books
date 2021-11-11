@@ -7,26 +7,15 @@
 
     <div class="slide-out-heading">
       <div class="title">
-        <h3>{{this.model.lastName}} {{this.model.firstName}} - Edit Author</h3>
+        <h3>{{this.lastName}} {{this.firstName}} - Edit Author</h3>
       </div>
     </div>
 
     <div class="slide-out-content">
-      <form {{on "submit" this.saveAuthor}}>
-        <div class="field">
-          <label>First Name:</label>
-          <input type="text" placeholder="First Name" value="{{this.model.firstName}}" oninput={{action "changeFirstName" value="target.value"}} />
-        </div>
-
-        <div class="field">
-          <label>Last Name:</label>
-          <Input @type="text" placeholder="Last Name" @value={{this.model.lastName}} />
-        </div>
-
-        <div class="form-footer">
-          <button type="submit" class="btn-submit">save</button>
-        </div>
-      </form>
+      <AuthorForm
+        @author={{this.model}}
+        @saveAuthor={{this.editAuthor}}
+      />
     </div>
   </div>
 </div>

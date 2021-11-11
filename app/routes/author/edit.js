@@ -7,4 +7,9 @@ export default class AuthorEditRoute extends Route {
   async model({ id }) {
     return this.dataService.readAuthor(id);
   }
+
+  setupController(controller, model) {
+    super.setupController(...arguments);
+    controller.initData();
+  }
 }

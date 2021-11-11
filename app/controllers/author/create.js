@@ -11,10 +11,8 @@ export default class AuthorCreateController extends Controller {
   // @tracked lastName = '';
 
   @action
-  async saveAuthor(e) {
-    e.preventDefault();
-
-    await this.dataService.createAuthor(this.model);
+  async createAuthor(author) {
+    await this.dataService.createAuthor(author);
 
     this.router.transitionTo('author');
   }
