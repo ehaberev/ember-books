@@ -11,7 +11,8 @@ export default class AuthorController extends Controller {
 
   async loadData() {
     this.isLoading = true;
-    const data = await this.dataService.readAuthors(this.search);
+    // const data = await this.dataService.readAuthors(this.search);
+    const data = this.store.findAll('author');
     this.model = data;
     this.isLoading = false;
   }
